@@ -1,9 +1,7 @@
-package com.adu.crud.test;
+package com.adu.test;
 
 import com.adu.crud.dao.EmployeeMapper;
-import com.adu.crud.entity.Employee;
 import com.adu.crud.entity.EmployeePoJo;
-import com.adu.crud.entity.EmployeeVo;
 import org.apache.ibatis.session.SqlSession;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -20,7 +18,6 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 import java.io.File;
 import java.io.IOException;
-import java.lang.reflect.Method;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
@@ -50,16 +47,17 @@ public class TestMybatis {
 
     @Test
     public void testSpirngDao() throws Exception {
-        employeeMapper.insertALL(new Employee(null,"张三","男",uuid+"@qq.com",1));
-//        EmployeeMapper mapper = sqlSession.getMapper(EmployeeMapper.class);
-//        for (int i = 0; i < 1; i++) {
-//
-//            mapper.insert(new EmployeePoJo(null,"张三","男",uuid+"@qq.com",1));
-//        }
-//        Method[] methods = employeeMapper.getClass().getMethods();
-//        for (Method method : methods) {
-//            System.out.println(method.getName());
-//        }
         System.out.println(employeeMapper);
+//        employeeMapper.insertALL(new EmployeePoJo(null,"张三","男",1));
+        EmployeeMapper mapper = sqlSession.getMapper(EmployeeMapper.class);
+        for (int i = 0; i < 1000; i++) {
+            mapper.insertALL(new EmployeePoJo(null,"张三"+uuid,"男",1));
+        }
+    }
+    @Test
+    public void testFindAll() throws Exception {
+        System.out.println(employeeMapper);
+        List<EmployeePoJo> all = employeeMapper.findALL(null);
+        System.out.println(all);
     }
 }

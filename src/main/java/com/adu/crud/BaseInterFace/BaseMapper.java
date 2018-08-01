@@ -1,5 +1,8 @@
 package com.adu.crud.BaseInterFace;
 
-public interface BaseMapper<V,P> {
-    void insert(V t) throws Exception;
+import java.util.List;
+
+public interface BaseMapper<P,V> {
+    void insertALL(P p) throws Exception;
+    List<P> findALL(V v) throws Exception;
 }

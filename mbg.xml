@@ -12,7 +12,7 @@
         </commentGenerator>
         <!--链接数据库-->
         <jdbcConnection driverClass="com.mysql.jdbc.Driver"
-                        connectionURL="jdbc:mysql://localhost:3306/test"
+                        connectionURL="jdbc:mysql://localhost:3306/employee"
                         userId="root"
                         password="root">
         </jdbcConnection>
@@ -40,7 +40,7 @@
             <property name="enableSubPackages" value="true" />
         </javaClientGenerator>
 
-        <table tableName="t_emp" domainObjectName="Employee" />
+        <!--<table tableName="t_emp" domainObjectName="Employee" />-->
         <table tableName="t_dept" domainObjectName="Department" />
 
     </context>
