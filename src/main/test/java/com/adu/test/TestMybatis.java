@@ -24,7 +24,7 @@ import java.util.List;
 import java.util.UUID;
 
 @RunWith(SpringJUnit4ClassRunner.class)
-@ContextConfiguration(locations = {"classpath:spring/applicationContext.xml"})
+@ContextConfiguration(locations = {"classpath:spring/applicationContext-dao.xml"})
 public class TestMybatis {
     String uuid = UUID.randomUUID().toString();
     @Test

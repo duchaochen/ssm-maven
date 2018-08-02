@@ -28,7 +28,9 @@ import com.github.pagehelper.PageInfo;
  */
 @RunWith(SpringJUnit4ClassRunner.class)
 @WebAppConfiguration
-@ContextConfiguration(locations = {"classpath:spring/applicationContext.xml",
+@ContextConfiguration(locations = {
+        "classpath:spring/applicationContext-dao.xml",
+        "classpath:spring/applicationContext-service.xml",
         "classpath:spring/springmvc.xml"})
 public class MvcTest {
     // 传入Springmvc的ioc
