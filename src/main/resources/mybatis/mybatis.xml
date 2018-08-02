@@ -9,12 +9,12 @@
         <package name="com.adu.crud.entity"/>
     </typeAliases>
 
-    <!--<plugins>-->
-        <!--&lt;!&ndash; com.github.pagehelper为PageHelper类所在包名 &ndash;&gt;-->
-        <!--<plugin interceptor="com.github.pagehelper.PageInterceptor">-->
-        <!--</plugin>-->
-    <!--</plugins>-->
-    <mappers>
-        <package name="com.adu.crud.dao"/>
-    </mappers>
+    <plugins>
+        <!-- com.github.pagehelper为PageHelper类所在包名 -->
+        <plugin interceptor="com.github.pagehelper.PageInterceptor">
+        </plugin>
+    </plugins>
+    <!--<mappers>-->
+        <!--<package name="com.adu.crud.dao"/>-->
+    <!--</mappers>-->
 </configuration>

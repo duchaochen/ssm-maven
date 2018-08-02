@@ -1,5 +1,6 @@
 package com.adu.crud.BaseInterFace;
 
+
 import java.util.List;
 
 public interface BaseMapper<P,V> {

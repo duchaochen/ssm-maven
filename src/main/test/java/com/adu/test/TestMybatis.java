@@ -24,7 +24,7 @@ import java.util.List;
 import java.util.UUID;
 
 @RunWith(SpringJUnit4ClassRunner.class)
-@ContextConfiguration(locations = {"classpath:spring/appliactionContext.xml"})
+@ContextConfiguration(locations = {"classpath:spring/applicationContext.xml"})
 public class TestMybatis {
     String uuid = UUID.randomUUID().toString();
     @Test
@@ -48,16 +48,15 @@ public class TestMybatis {
     @Test
     public void testSpirngDao() throws Exception {
         System.out.println(employeeMapper);
-//        employeeMapper.insertALL(new EmployeePoJo(null,"张三","男",1));
         EmployeeMapper mapper = sqlSession.getMapper(EmployeeMapper.class);
         for (int i = 0; i < 1000; i++) {
-            mapper.insertALL(new EmployeePoJo(null,"张三"+uuid,"男",1));
+            mapper.insertALL(new EmployeePoJo(null,"张三"+uuid,"男",uuid+"@qq.com",1));
         }
     }
     @Test
     public void testFindAll() throws Exception {
         System.out.println(employeeMapper);
         List<EmployeePoJo> all = employeeMapper.findALL(null);
-        System.out.println(all);
+        System.out.println(all.size());
     }
 }
