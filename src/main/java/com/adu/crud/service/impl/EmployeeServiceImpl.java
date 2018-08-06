@@ -8,13 +8,13 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
-
 @Service
 public class EmployeeServiceImpl implements EmployeeService {
 
     @Autowired
     private EmployeeMapper employeeMapper;
 
+    @Override
     public List<EmployeePoJo> findALL(EmployeeVo employeeVo) throws Exception {
         return employeeMapper.findALL(employeeVo);
     }
